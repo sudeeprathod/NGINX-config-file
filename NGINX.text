@@ -1,0 +1,24 @@
+server {
+        location / {
+        listen 80 default_server;
+        listen [::]:80 default_server ipv6only=on;
+        server_name GOT.com www.GOT.com *.GOT.com;
+        root /home/sudeeprathod/Documents/GOT;
+
+        } 
+
+               
+        error_page 404 /custom_404.html;
+        location = /custom_404.html {
+                root /home/sudeeprathod/Documents/GOT;
+                internal;
+        }
+
+        error_page 500 502 503 504 /custom_50x.html;
+        location = /custom_50x.html {
+                root /home/sudeeprathod/Documents/GOT;
+                internal;
+        }
+
+        
+}
